@@ -15,8 +15,8 @@ const categoryIcons = {
   Category.travel: Icons.flight_takeoff,
 };
 
-class ExpenseModel {
-  ExpenseModel({
+class Expense {
+  Expense({
     required this.title,
     required this.amount,
     required this.date,

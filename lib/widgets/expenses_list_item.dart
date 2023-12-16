@@ -1,4 +1,4 @@
-import 'package:expense_tracker/models/expense_model.dart';
+import 'package:expense_tracker/models/expense.dart';
 import 'package:flutter/material.dart';
 
 class ExpensesListItem extends StatelessWidget {
@@ -7,7 +7,7 @@ class ExpensesListItem extends StatelessWidget {
     required this.expense,
   });
 
-  final ExpenseModel expense;
+  final Expense expense;
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +15,12 @@ class ExpensesListItem extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(expense.title),
+            Text(
+              expense.title,
+              style: Theme.of(context).textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+            ),
             Row(
               children: [
                 Text('\$${expense.amount.toStringAsFixed(2)}'),
